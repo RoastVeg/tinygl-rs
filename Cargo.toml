@@ -1,0 +1,26 @@
+[package]
+name = "tgl"
+version = "0.1.0"
+authors = ["Louis Hampton <louis@hamptonsoftworks.com>"]
+description = "Bindings to TinyGL, a Small, Free and Fast Subset of OpenGL"
+license = "MIT OR Apache-2.0"
+build = "build.rs"
+documentation = "https://docs.rs/tgl"
+homepage = "https://github.com/roastveg/tinygl-rs/"
+categories = ["api-bindings", "rendering::graphics-api"]
+keywords = ["tgl", "gl", "opengl", "tinygl"]
+
+[features]
+default = ["text"]
+text = []
+
+[dependencies]
+cty = "0.2"
+paste = "1"
+
+[build-dependencies]
+bindgen = "0.59"
+cmake = "0.1"
+
+[dev-dependencies]
+minifb = "0.20"

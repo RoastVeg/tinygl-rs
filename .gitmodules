@@ -1,0 +1,3 @@
+[submodule "tinygl"]
+	path = tinygl
+	url = https://github.com/C-Chads/tinygl
