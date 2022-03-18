@@ -41,7 +41,7 @@ macro_rules! glfn {
 		pub unsafe fn $i($(
 		    $arg: $t,
 		)*) {
-		    crate::sys::[<gl $i>]($($arg.try_into().unwrap(), )*)
+		    crate::sys::[<gl $i>]($($arg as _, )*)
 		}
 	    )*
 	}
@@ -634,7 +634,11 @@ glconst_rename![
     TEXTURE_2D_BINDING TEXTURE_BINDING_2D
 ];
 
-pub unsafe fn AreTexturesResident(n: GLsizei, textures: *const GLuint, residences: *mut GLboolean) -> GLboolean {
+pub unsafe fn AreTexturesResident(
+    n: GLsizei,
+    textures: *const GLuint,
+    residences: *mut GLboolean,
+) -> GLboolean {
     sys::glAreTexturesResident(n, textures, residences)
 }
 
@@ -655,7 +659,12 @@ pub unsafe fn GetString(name: GLenum) -> *const GLubyte {
 }
 
 #[cfg(feature = "text")]
-pub unsafe fn GetTexturePixmap(text: GLint, level: GLint, xsize: *mut GLint, ysize: *mut GLint) -> *mut GLvoid {
+pub unsafe fn GetTexturePixmap(
+    text: GLint,
+    level: GLint,
+    xsize: *mut GLint,
+    ysize: *mut GLint,
+) -> *mut GLvoid {
     sys::glGetTexturePixmap(text, level, xsize, ysize)
 }
 
@@ -844,7 +853,8 @@ glfn![
     TextSize (mode GLTEXTSIZE)
 ];
 
-pub type postProcessFunc = unsafe extern "C" fn(x: GLint, y: GLint, pixel: GLuint, z: GLushort) -> GLuint;
+pub type postProcessFunc =
+    unsafe extern "C" fn(x: GLint, y: GLint, pixel: GLuint, z: GLushort) -> GLuint;
 
 pub mod types {
     pub use crate::sys::{

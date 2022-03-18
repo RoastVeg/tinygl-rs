@@ -8,11 +8,9 @@ fn main() {
     println!("cargo:rustc-link-lib=static=tinygl-static");
     let bindings = bindgen::Builder::default()
         .header("tinygl/include/zbuffer.h")
-    //.allowlist_var("(GL.*|ZB.*|TGL_[^F].*|COLOR.*|TINYGL.*)")
-	.allowlist_var("(GL.*|ZB.*)")
+        .allowlist_var("(GL.*|ZB.*)")
         .allowlist_type("(GL.*|ZB.*)")
         .allowlist_function("(gl.*|ZB.*)")
-        //.bitfield_enum("GL_.*_BITS?")
         .default_enum_style(bindgen::EnumVariation::Consts)
         .use_core()
         .ctypes_prefix("cty")

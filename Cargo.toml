@@ -9,6 +9,7 @@ documentation = "https://docs.rs/tgl"
 homepage = "https://github.com/roastveg/tinygl-rs/"
 categories = ["api-bindings", "rendering::graphics-api"]
 keywords = ["tgl", "gl", "opengl", "tinygl"]
+readme = "README.md"
 
 [features]
 default = ["text"]
