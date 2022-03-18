@@ -5,7 +5,7 @@
 
 [TinyGL](https://github.com/c-chads/tinygl) is a very lightweight partial OpenGL implementation. Its small size makes it ideal for static linking.
 
-These bindings aim to broadly replicate the API of the [gl](https://github.com/briancanzyk/gl-rs) crate, though there are notable differences.
+These bindings aim to broadly replicate the API of the [gl](https://github.com/brendanzab/gl-rs) crate, though there are notable differences.
 
 ## Featuers
 
