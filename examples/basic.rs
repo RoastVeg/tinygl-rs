@@ -5,8 +5,10 @@
  * with the end result being a small white box that follows the cursor
  */
 
+extern crate minifb;
+extern crate tgl;
+
 use minifb::{Key, MouseMode, Window, WindowOptions};
-use tgl;
 use tgl::zbuffer;
 
 const WIDTH: usize = 640;
