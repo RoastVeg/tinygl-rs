@@ -1,6 +1,6 @@
 [package]
 name = "tgl"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Louis Hampton <louis@hamptonsoftworks.com>"]
 description = "Bindings to TinyGL, a Small, Free and Fast Subset of OpenGL"
 license = "MIT OR Apache-2.0"
