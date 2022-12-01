@@ -10,7 +10,7 @@ homepage = "https://github.com/roastveg/tinygl-rs/"
 categories = ["api-bindings", "rendering::graphics-api"]
 keywords = ["tgl", "gl", "opengl", "tinygl"]
 readme = "README.md"
-exclude = ["/tinygl/doc", "/tinygl/Raw_Demos", "/tinygl/SDL_Examples"]
+exclude = ["/tinygl/*.gif", "/tinygl/Raw_Demos", "/tinygl/SDL_Examples"]
 
 [features]
 default = ["text"]
