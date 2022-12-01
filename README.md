@@ -7,7 +7,7 @@
 
 These bindings aim to broadly replicate the API of the [gl](https://github.com/brendanzab/gl-rs) crate, though there are notable differences.
 
-## Featuers
+## Features
 
 - Impressive performance with low resource requirements
 - Highly portable OpenGL implementation, with no runtime dependencies

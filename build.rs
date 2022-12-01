@@ -2,9 +2,9 @@ fn main() {
     let dir = std::env::var("OUT_DIR").unwrap();
     let _tinygl = cmake::Config::new("tinygl")
         .define("TINYGL_BUILD_SHARED", "OFF")
-        .define("CMAKE_DISABLE_FIND_PACKAGE_OpenMP", "TRUE")
+        .build_target("all")
         .build();
-    println!("cargo:rustc-link-search=native={}{}", dir, "/lib");
+    println!("cargo:rustc-link-search=native={}{}", dir, "/build");
     println!("cargo:rustc-link-lib=static=tinygl-static");
     let bindings = bindgen::Builder::default()
         .header("tinygl/include/zbuffer.h")
